@@ -4,8 +4,8 @@ import StatsArea from '../components/StatsArea.vue'
 </script>
 
 <template>
-  <main class='flex'>
-    <WriteArea></WriteArea>
+  <main>
     <StatsArea></StatsArea>
+    <WriteArea></WriteArea>
   </main>
 </template>
