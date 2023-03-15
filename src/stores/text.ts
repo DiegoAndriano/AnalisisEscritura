@@ -10,14 +10,14 @@ export const useTextStore = defineStore('text', () => {
     return text.value.split('\n').filter((item: String) => item !== '')
   })
 
-  const sentences: Ref<Array<Array<String>>> = computed(function() {
+  const sentences: Ref<Array<String>> = computed(function() {
     return allParagraphs.value.map(function(item) {
       // /([^.!?]*[^.!?\s][.!?]['"]?)(\s|$)/g
       return item
         .split(/([^.!?]*[^.!\s][.?]['"]?)(\s|$)/g)
         .filter((item: String) => item != '')
         .filter((item: String) => item != ' ')
-    })
+    }).flat()
   })
 
   return { text, allParagraphs, sentences }

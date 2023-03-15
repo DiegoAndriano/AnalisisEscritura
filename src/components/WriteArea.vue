@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { useTextStore } from '@/stores/text'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import type { Ref } from 'vue'
 
 const textStore = useTextStore()
