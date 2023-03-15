@@ -20,5 +20,19 @@ export const useTextStore = defineStore('text', () => {
     }).flat()
   })
 
-  return { text, allParagraphs, sentences }
+  const words: Ref<Array<String>> = computed(function() {
+    return sentences.value.map(function(item) {
+      // /([^.!?]*[^.!?\s][.!?]['"]?)(\s|$)/g
+      return item
+        .split(" ")
+        .filter((item: String) => item != '')
+        .filter((item: String) => item != ' ')
+    }).flat()
+  })
+
+  const forbiddenWords: Array<String> = [
+    "Rápidamente"
+  ];
+
+  return { text, allParagraphs, sentences, forbiddenWords, words }
 })

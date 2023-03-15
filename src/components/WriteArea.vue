@@ -23,11 +23,15 @@ let updateText = function() {
 <template>
   <div class='flex flex-col justify-around'>
     <textarea @keyup='updateText' rows='5' class='w-full px-4 my-6' v-model='text'></textarea>
+
     <div class='py-6' v-for='(paragraph, index) in textStore.allParagraphs' :key='index + "2"'>
       <p>{{ `${index} ${paragraph}` }}</p>
     </div>
     <div v-for='(sentence, index ) in textStore.sentences' :key='index + "1"'>
       <p>{{ `${index} ${sentence}` }}</p>
+    </div>
+    <div v-for='(word, index ) in textStore.words' :key='index + "3"'>
+      <p>{{ `${index} ${word}` }}</p>
     </div>
   </div>
 </template>
