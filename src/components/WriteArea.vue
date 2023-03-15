@@ -31,7 +31,7 @@ let updateText = function() {
       <p>{{ `${index} ${sentence}` }}</p>
     </div>
     <div v-for='(word, index ) in textStore.words' :key='index + "3"'>
-      <p>{{ `${index} ${word}` }}</p>
+      <p v-html='word'></p>
     </div>
   </div>
 </template>
