@@ -28,7 +28,7 @@ let updateText = function() {
       <p>{{ `${index} ${paragraph}` }}</p>
     </div>
     <div v-for='(sentence, index ) in textStore.sentences' :key='index + "1"'>
-      <p>{{ `${index} ${sentence}` }}</p>
+      <p v-html='sentence'></p>
     </div>
     <div v-for='(word, index ) in textStore.words' :key='index + "3"'>
       <p v-html='word'></p>
